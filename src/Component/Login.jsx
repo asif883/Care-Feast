@@ -1,19 +1,43 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
+    const {login} = useAuth()
+    const navigate = useNavigate()
+  
     const {
       handleSubmit,
       register,
       formState:{ errors }
     } = useForm()
 
-    const handleLogin = () =>{
+    const handleLogin = (data) =>{
+     
+       const email = data.email
+       const password = data.password
 
+       login( email , password)
+       .then(res =>{
+        console.log(res);
+        Swal.fire({
+            title: 'Success!',
+            text: 'Login Successful',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          });
+          navigate('/dashboard/overview');
+    })
     }
     return (
         <div className="max-w-3xl mx-auto">
+            <div className="text-center mt-8">
+                <h1 className="text-4xl font-bold">
+                    Please Login
+                </h1>
+            </div>
           <form onSubmit={handleSubmit(handleLogin)}  className="card-body">
               <div className="form-control">
               <label className="label">

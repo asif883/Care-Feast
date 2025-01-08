@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged,signInWithEmailAndPassword,signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase";
 
@@ -24,10 +24,23 @@ const Context = ({children}) => {
         setLoading(true)
         return createUserWithEmailAndPassword( auth, email, password)
     }
+
+      // login 
+      const login = ( email, password ) =>{
+        setLoading(true)    
+        return signInWithEmailAndPassword( auth, email, password)
+    }
+
+    // logout
+    const logout = () =>{
+        return signOut(auth)
+    }
     const authInfo ={
        user, 
        loading,
-       CreateUser
+       CreateUser,
+       login,
+       logout
     }
     return (
         <AuthContext.Provider value={authInfo}>

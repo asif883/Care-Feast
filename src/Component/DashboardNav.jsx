@@ -6,6 +6,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
 import "../Css/dash.css";
+import useAuth from "../Hooks/useAuth";
 
 
 const Routes = [
@@ -42,15 +43,18 @@ const Routes = [
 ];
 
 const DashboardNav = () => {
+   const {logout} = useAuth()
   return (
     <div className="p-4">
-      <h1 className="text-center text-3xl font-bold text-[#324560] border-b border-gray-300 pb-4">
+      <div className="text-center border-b border-gray-300 pb-4">
+        <p className="text-center text-3xl font-bold text-[#324560] ">
         Care-Feast
-      </h1>
+        </p>
+      </div>
       <div className="px-4 py-6 space-y-3">
         {Routes.map((route) => (
           <NavLink
-            className="flex items-center gap-2 text-[#87888A] font-semibold border border-gray-300 rounded-xl px-5 py-2"
+            className="flex items-center gap-2 text-[#444546] font-semibold border border-gray-300 rounded-xl px-5 py-2"
             to={route.link}
             key={route.id}
           >
@@ -58,7 +62,7 @@ const DashboardNav = () => {
             {route.label}
           </NavLink>
         ))}
-         <button className="flex items-center gap-2 text-[#444546] font-semibold border border-gray-300 rounded-xl px-5 py-2 w-full">
+         <button onClick={() => logout ()} className="flex items-center gap-2 text-[#444546] font-semibold border border-gray-300 rounded-xl px-5 py-2 w-full">
           <CiLogout/>  Logout
          </button>
       </div>
