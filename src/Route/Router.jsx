@@ -5,30 +5,41 @@ import PatientDetails from "../Component/PatientDetails";
 import FoodChart from "../Component/FoodChart";
 import TrackDelivery from "../Component/TrackDelivery";
 import Management from "../Component/Management";
+import PrivateRoute from "./PrivateRoute";
+import Login from "../Component/Login";
+import Register from "../Component/Register";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Dashboard/>,
+     {
+      path: '/login',
+      element: <Login/>
+     },
+     {
+      path: '/register',
+      element: <Register/>
+     },
+     {
+      path: "/dashboard",
+      element: <PrivateRoute><Dashboard/></PrivateRoute>,
       children: [
          {
-            path: '/overview',
+            path: '/dashboard/overview',
             element:<Overview/>
          },
          {
-            path: 'patient-details',
+            path: '/dashboard/patient-details',
             element: <PatientDetails/>
          },
          {
-            path: 'food-chart',
+            path: '/dashboard/food-chart',
             element: <FoodChart/>
          },
          {
-            path: 'track-delivery',
+            path: '/dashboard/track-delivery',
             element: <TrackDelivery/>
          },
          {
-            path: 'management',
+            path: '/dashboard/management',
             element: <Management/>
          },
       ]

@@ -4,6 +4,7 @@ import { TbListDetails } from "react-icons/tb";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineManageAccounts } from "react-icons/md";
+import { CiLogout } from "react-icons/ci";
 import "../Css/dash.css";
 
 
@@ -12,31 +13,31 @@ const Routes = [
     id: 1,
     label: "Overview",
     icon: <LuLayoutDashboard />,
-    link: "/overview",
+    link: "/dashboard/overview",
   },
   {
     id: 2,
     label: "Patient Details",
     icon: <TbListDetails/>,
-    link: "/patient-details",
+    link: "/dashboard/patient-details",
   },
   {
     id: 3,
     label: "Food Charts",
     icon: <IoFastFoodOutline/>,
-    link: "/food-chart",
+    link: "/dashboard/food-chart",
   },
   {
     id: 4,
     label: "Track Delivery",
     icon: <TbTruckDelivery/>,
-    link: "/track-delivery",
+    link: "/dashboard/track-delivery",
   },
   {
     id: 5,
     label: "Management",
     icon: <MdOutlineManageAccounts/>,
-    link: "/management",
+    link: "/dashboard/management",
   },
 ];
 
@@ -57,6 +58,9 @@ const DashboardNav = () => {
             {route.label}
           </NavLink>
         ))}
+         <button className="flex items-center gap-2 text-[#444546] font-semibold border border-gray-300 rounded-xl px-5 py-2 w-full">
+          <CiLogout/>  Logout
+         </button>
       </div>
     </div>
   );
