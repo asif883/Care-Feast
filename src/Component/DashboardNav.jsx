@@ -5,6 +5,7 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
+import { BsPersonAdd } from "react-icons/bs";
 import "../Css/dash.css";
 import useAuth from "../Hooks/useAuth";
 
@@ -18,24 +19,30 @@ const Routes = [
   },
   {
     id: 2,
+    label: "Add Patient",
+    icon: <BsPersonAdd/>,
+    link: "/dashboard/add-patient",
+  },
+  {
+    id: 3,
     label: "Patient Details",
     icon: <TbListDetails/>,
     link: "/dashboard/patient-details",
   },
   {
-    id: 3,
+    id: 4,
     label: "Food Charts",
     icon: <IoFastFoodOutline/>,
     link: "/dashboard/food-chart",
   },
   {
-    id: 4,
+    id: 5,
     label: "Track Delivery",
     icon: <TbTruckDelivery/>,
     link: "/dashboard/track-delivery",
   },
   {
-    id: 5,
+    id: 6,
     label: "Management",
     icon: <MdOutlineManageAccounts/>,
     link: "/dashboard/management",
@@ -51,7 +58,7 @@ const DashboardNav = () => {
         Care-Feast
         </p>
       </div>
-      <div className="px-4 py-6 space-y-3">
+      <div className="py-6 space-y-3">
         {Routes.map((route) => (
           <NavLink
             className="flex items-center gap-2 text-[#444546] font-semibold border border-gray-300 rounded-xl px-5 py-2"

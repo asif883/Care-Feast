@@ -8,6 +8,7 @@ import Management from "../Component/Management";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../Component/Login";
 import Register from "../Component/Register";
+import AddPatientForm from "../Component/AddPatient";
 
 const router = createBrowserRouter([
      {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
          {
             path: '/dashboard/management',
             element: <Management/>
+         },
+         {
+            path: '/dashboard/add-patient',
+            element: <AddPatientForm/>
          },
       ]
     }
