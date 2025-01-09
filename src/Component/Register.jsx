@@ -25,7 +25,7 @@ const Register = () => {
                             <span className="label-text text-xl font-semibold">Name</span>
                         </label>
                             
-                        <input type="text" name="Name"  placeholder="Enter Your Name"className="input input-bordered border border-orange-300" {...register('name' ,{required: true})} />
+                        <input type="text" name="Name"  placeholder="Enter Your Name"className="input input-bordered border border-gray-300" {...register('name' ,{required: true})} />
                         {
                             errors.name && ( 
                                 <p className='text-red-500 text-sm font-light'>Name is required</p>
@@ -38,7 +38,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Email</span>
                         </label>
-                        <input type="email" name='email' placeholder="email" className="input input-bordered border border-orange-300"{...register("email", {required: true})} />
+                        <input type="email" name='email' placeholder="email" className="input input-bordered border border-gray-300"{...register("email", {required: true})} />
                         {
                           errors.email && ( 
                               <p className='text-red-500 text-sm font-light'>Email is required</p>
@@ -54,7 +54,7 @@ const Register = () => {
                     <input
                         type="password"
                         placeholder="Enter your password"
-                        className= "input input-bordered border border-orange-300"
+                        className= "input input-bordered border border-gray-300"
                         {...register("password", {
                         required: "Password is required.",
                         minLength: {
@@ -82,7 +82,7 @@ const Register = () => {
                         <input type='password' 
                         name='confirm-password' 
                         placeholder="confirm-password" 
-                        className= "input input-bordered border border-orange-300" 
+                        className= "input input-bordered border border-gray-300" 
                         {...register("confirmPassword", {
                             required: true ,
                             validate:(value)=>{
@@ -103,11 +103,11 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text text-xl font-semibold">Role</span>
                         </label>
-                        <select className="select w-full input input-bordered border border-orange-300" 
+                        <select className="select w-full input input-bordered border border-gray-300" 
                         {...register('role', {required: true})} 
                         >
-                            <option value='buyer'>Buyer</option>
-                            <option value='seller'>Seller</option>
+                            <option value='patient'>Patient</option>
+                            <option value='staff'>Staff</option>
                           </select>
                             {
                                 errors.role &&(
@@ -117,10 +117,10 @@ const Register = () => {
                     </div>
                     
                     <div className="form-control mt-6">
-                    <button type='submit' className=" w-full border-2 mr-4  px-4  rounded-lg py-3 bg-[#FFA43A] text-white  font-semibold">Register</button>
+                    <button type='submit' className=" w-full border-2 mr-4  px-4  rounded-lg py-3 bg-gray-800 text-white  font-semibold">Register</button>
                     </div>
                     <label className="label mt-4">
-                        <a className="label-text-alt text-lg">Already have an account? Please <Link to='/login' className="underline text-orange-600">Login</Link></a>
+                        <a className="label-text-alt text-lg text-gray-500">Already have an account? Please <Link to='/login' className="underline text-gray-800 font-semibold">Login</Link></a>
                     </label>
              </form>
         </div>

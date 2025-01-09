@@ -43,7 +43,7 @@ const Login = () => {
               <label className="label">
                   <span className="label-text text-xl font-semibold">Email</span>
               </label>
-              <input type="email" name="email" placeholder="email" className="input input-bordered border border-orange-300" {...register("email" ,{required: true})} />
+              <input type="email" name="email" placeholder="email" className="input input-bordered border border-gray-300" {...register("email" ,{required: true})} />
               {
                 errors.email && (
                     <p className='text-red-500 text-sm font-light'> Email is required</p>
@@ -59,7 +59,7 @@ const Login = () => {
                   <input
                         type="password"
                         placeholder="Enter your password"
-                        className= "input input-bordered border border-orange-300"
+                        className= "input input-bordered border border-gray-300"
                         {...register("password", {
                         required: "Password is required.",
                         minLength: {
@@ -84,11 +84,11 @@ const Login = () => {
                   </div>
              
               <div className="form-control mt-6">
-              <button type='submit' className="w-full border-2 mr-4  px-4  rounded-lg py-3 bg-[#FFA43A] text-white  font-semibold">Login</button>
+              <button type='submit' className="w-full border-2 mr-4  px-4  rounded-lg py-3 bg-gray-800 text-white  font-semibold">Login</button>
               </div>
               
               <label className="label">
-                  <p className="label-text-alt text-lg ">New here? Please <Link to='/register' className="underline text-[#FFA43A] font-medium">Register</Link></p>
+                  <p className="label-text-alt text-lg text-gray-500">New here? Please <Link to='/register' className="underline text-gray-800 font-medium">Register</Link></p>
               </label>
       </form>
         </div>

@@ -8,6 +8,7 @@ import { CiLogout } from "react-icons/ci";
 import { BsPersonAdd } from "react-icons/bs";
 import "../Css/dash.css";
 import useAuth from "../Hooks/useAuth";
+import logo from '../../src/assets/Care-feast.png'
 
 
 const Routes = [
@@ -54,8 +55,8 @@ const DashboardNav = () => {
   return (
     <div className="p-4">
       <div className="text-center border-b border-gray-300 pb-4">
-        <p className="text-center text-3xl font-bold text-[#324560] ">
-        Care-Feast
+        <p className="text-center text-3xl font-bold text-[#324560] flex gap-1 items-center">
+        <img className="w-12 rounded-full" src={logo} alt="logo" /> Care-Feast
         </p>
       </div>
       <div className="py-6 space-y-3">
